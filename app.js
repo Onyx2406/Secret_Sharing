@@ -79,4 +79,16 @@ const { hash } = window.location;
     }
 
 
+/*This code is using the ClassicEditor library to create a rich text editor on a web page, and then adding event listeners to the form element that surrounds the text area.
 
+The first event listener is added to the form's submit button, when the form is submitted, it prevents the default event from occurring and checks if the input field is empty, if it is, it will show an error message. If it is not empty, it will take the input's value and encode it using the btoa() function, which converts the input value to base64 encoded ASCII.
+
+It then creates a shareableLink variable by concatenating the current URL and the encoded value, and creates a new HTML element of type "i" and assigns classes to it.
+
+The next event listener is added to this newly created element, which listens for a click event and uses the clipboard API to write the shareableLink to the clipboard. It also uses the Toastify library to display a message saying the link has been copied to the clipboard.
+
+Then, it shows a SweetAlert (swal) dialog box with the shareableLink as the text, and the newly created "i" element as the content of the dialog box.
+
+After this, the input field is cleared.
+
+Lastly, it is checking if there is a hash in the URL, if so, it will decode the hash using the atob() function, which converts the base64 encoded ASCII to the original string. */
