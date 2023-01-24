@@ -4,4 +4,3 @@ This is a project created with the help of html, css and javascript. Here, the u
 
 <br>
 
-The text editor that I integrated in this website is **ckeditor**. For more info, visit https://ckeditor.com/
