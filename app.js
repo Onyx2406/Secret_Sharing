@@ -79,16 +79,12 @@ const { hash } = window.location;
     }
 
 
-/*This code is using the ClassicEditor library to create a rich text editor on a web page, and then adding event listeners to the form element that surrounds the text area.
+/*This code creates a Rich Text Editor using the ClassicEditor library, which is then displayed on the page using the create() method and passing in a reference to the HTML element with the class "my_editor".
 
-The first event listener is added to the form's submit button, when the form is submitted, it prevents the default event from occurring and checks if the input field is empty, if it is, it will show an error message. If it is not empty, it will take the input's value and encode it using the btoa() function, which converts the input value to base64 encoded ASCII.
+When the form is submitted, a submit event listener is triggered which prevents the default form submission behavior and checks if the text editor is empty. If it is, an error message is displayed using the SweetAlert library.
 
-It then creates a shareableLink variable by concatenating the current URL and the encoded value, and creates a new HTML element of type "i" and assigns classes to it.
+If the text editor is not empty, the value is then encoded using the btoa() method which encodes a string in base-64. This encoded value is then appended to the current URL as a hash fragment, creating a new shareable link.
 
-The next event listener is added to this newly created element, which listens for a click event and uses the clipboard API to write the shareableLink to the clipboard. It also uses the Toastify library to display a message saying the link has been copied to the clipboard.
+The shareable link is then copied to the clipboard when the user clicks on the clipboard icon (created as a copyIcon element) using the navigator.clipboard.writeText() method. A success message is then displayed using the Toastify library.
 
-Then, it shows a SweetAlert (swal) dialog box with the shareableLink as the text, and the newly created "i" element as the content of the dialog box.
-
-After this, the input field is cleared.
-
-Lastly, it is checking if there is a hash in the URL, if so, it will decode the hash using the atob() function, which converts the base64 encoded ASCII to the original string. */
+Finally, the form's input is cleared and the decrypted message is displayed on the page if a hash fragment exists in the current URL using the atob() method which decodes a base-64 encoded string. */
